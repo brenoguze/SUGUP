@@ -5,9 +5,9 @@ import { useAuth } from "../../hooks/useAuth";
 import { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const IMG_FUNDO = "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/m56t10ey7e/tpskaosv_expires_30_days.png";
-const IMG_ICON = "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/m56t10ey7e/ikeo63j3_expires_30_days.png";
-const IMG_LOGO = "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/m56t10ey7e/h2mmbyja_expires_30_days.png";
+const IMG_FUNDO = "/gradiente.png";
+const IMG_ICON = "/logosug-branca.svg"; 
+const IMG_LOGO = "/logosug-laranja.svg";
 
 export default function Autenticacao() {
   const [ehCadastro, setEhCadastro] = useState(false);
@@ -29,6 +29,7 @@ export default function Autenticacao() {
 
       {/* TELA 1: INTRO MOBILE */}
       <div className={`absolute inset-0 flex flex-col justify-between p-8 pt-20 pb-12 z-0 md:hidden transition-opacity duration-300 ${introMobile ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        {/* Usando o invert para deixar a logo branca no fundo escuro mobile */}
         <img src={IMG_LOGO} className="w-10 filter brightness-0 invert" alt="Logo" />
         
         <div className="text-[#FFF9F0]">

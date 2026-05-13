@@ -21,7 +21,6 @@ export function useAuth() {
     setCarregando(true);
 
     try {
-      // CORREÇÃO 1: Tiramos o "const resposta =" daqui.
       await api.post("/users", {
         nome: dados.nome,
         email: dados.email,
@@ -40,7 +39,6 @@ export function useAuth() {
 
       return true;
     } catch (erro: any) {
-      // ISSO AQUI VAI MOSTRAR EXATAMENTE QUAL CAMPO ESTÁ ERRADO
       console.error(
         "Erro no cadastro:",
         erro.response?.data?.message || erro.message,
@@ -62,11 +60,8 @@ export function useAuth() {
   const entrar = async (dados: LoginDTO) => {
     setCarregando(true);
     try {
-      // 1. Fazemos a requisição e guardamos a resposta do Backend
       const resposta = await api.post("/auth/login", dados);
 
-      // 2. Salvamos a "pulseira" (token) e o nome do usuário na memória do navegador
-      // Usamos '@sugup:' como prefixo apenas para organizar e não misturar com outros sites
       localStorage.setItem("@sugup:token", resposta.data.access_token);
       localStorage.setItem("@sugup:nome", resposta.data.usuario.nome);
 

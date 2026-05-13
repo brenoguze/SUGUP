@@ -136,3 +136,7 @@ dist
 .pnp.*
 
 .DS_Store
+
+**/.wwebjs_auth/
+**/.wwebjs_cache/
+**/.DS_Store

@@ -34,7 +34,7 @@ export default function Autenticacao() {
         <div className="text-[#FFF9F0]">
           <p className="text-[40px] font-normal mb-6">Eai!</p>
           <h1 className="text-3xl font-normal leading-snug mb-10">
-            Bem-vindo ao <strong className="font-bold">SUG UP</strong> seu espaço de gestão criativa.
+            Bem-vindo ao <strong className="font-bold">SUGUP</strong> seu espaço de gestão criativa.
           </h1>
           <button 
             onClick={() => { setEhCadastro(false); setIntroMobile(false); }}

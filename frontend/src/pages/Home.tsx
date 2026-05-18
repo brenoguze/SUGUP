@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DragDropContext, Droppable, Draggable, type DropResult } from '@hello-pangea/dnd';
 
-const IMG_LOGO = "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/m56t10ey7e/h2mmbyja_expires_30_days.png";
+const IMG_LOGO = "/logosug-laranja.svg";
 
-// Dados simulados da IA (No futuro, virão do backend)
 const dadosIniciais = {
   colunas: {
     'coluna-1': { id: 'coluna-1', titulo: 'A fazer', cardsId: ['card-1', 'card-2'] },

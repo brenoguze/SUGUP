@@ -3,9 +3,14 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class GeminiService {
   async traduzirMensagemParaJson(mensagemCliente: string) {
-    // ⚠️ Cole sua chave válida aqui de novo (Mantenha as aspas)
-    const apiKey = 'AIzaSyCuoifYCgq-qGmqH16BmBCPSxep0z-pjF0'; 
+    // 🔒 Agora o código puxa a chave do seu arquivo .env de forma segura!
+    const apiKey = process.env.GEMINI_API_KEY; 
     
+    if (!apiKey) {
+      console.error('❌ ERRO GRAVE: Chave GEMINI_API_KEY não encontrada no arquivo .env!');
+      return null;
+    }
+
     try {
       console.log('\n🔍 [Passo 1] Investigando modelos liberados para sua chave...');
       const listResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
